@@ -248,12 +248,13 @@ public class Controller extends JPanel
 
 			if(asteroidsThatHitBase >= 4500 && warningCounter == 0)
 			{
+				/*
 				if(musicOn == true)
 				{
 					try
 					{
 						InputStream warningIn = new FileInputStream("GalaxyQuestMultimedia/warningSound.au");
-						//warningSound = new AudioStream(warningIn);        
+						warningSound = new AudioStream(warningIn);        
 					}
 					catch (FileNotFoundException e)
 					{
@@ -264,21 +265,22 @@ public class Controller extends JPanel
 						System.out.println("IOException");
 					}
 					
-					//AudioPlayer.player.start(warningSound);  
+					AudioPlayer.player.start(warningSound);  
 				}
+				*/
 			}
 			warningCounter++;
 			
-			
+			/*
 			if(musicCounter >= 480) musicCounter = 0; //restarts the music
 			
 			if (musicOn == true && musicCounter == 0)
 			{
-				//AudioPlayer.player.stop(backgroundMusic);
+				AudioPlayer.player.stop(backgroundMusic);
 				try
 				{
 					InputStream backgroundIn = new FileInputStream("GalaxyQuestMultimedia/backgroundMusic.au");
-					//backgroundMusic = new AudioStream(backgroundIn);        
+					backgroundMusic = new AudioStream(backgroundIn);        
 				}
 				catch (FileNotFoundException e)
 				{
@@ -289,11 +291,12 @@ public class Controller extends JPanel
 					System.out.println("IOException");
 				}
 				
-				//AudioPlayer.player.start(backgroundMusic);  
+				AudioPlayer.player.start(backgroundMusic);  
 			}
 			
-			//if(musicOn == false)  AudioPlayer.player.stop(backgroundMusic);
+			if(musicOn == false)  AudioPlayer.player.stop(backgroundMusic);
 			musicCounter++;
+			*/
 			
 			setCursor(cursor);
 			
@@ -498,13 +501,14 @@ public class Controller extends JPanel
 					repaint();
 					if (lives >= 0) 
 					{
-						//AudioPlayer.player.stop(backgroundMusic);
+						/*
+						AudioPlayer.player.stop(backgroundMusic);
 						if(musicOn == true)
 						{
 							try
 							{
 								InputStream asteroidMusicIn = new FileInputStream("GalaxyQuestMultimedia/asteroidExplosion.au");
-								//asteroidSound = new AudioStream(asteroidMusicIn);        
+								asteroidSound = new AudioStream(asteroidMusicIn);        
 							}
 							catch (FileNotFoundException e)
 							{
@@ -515,8 +519,9 @@ public class Controller extends JPanel
 								System.out.println("IOException");
 							}
 							
-							//AudioPlayer.player.start(asteroidSound);  
+							AudioPlayer.player.start(asteroidSound);  
 						}
+						*/
 						JOptionPane.showMessageDialog(null, "Your base has been destroyed by asteroids");
 						musicCounter = 0;
 						petersShip.resetShip();
@@ -601,11 +606,11 @@ public class Controller extends JPanel
 						rateOfLasersFired = 0;
 					}
 					else 
-					{ 
+					{
 						/*
 						if(musicOn == true)
 						{
-							//AudioPlayer.player.stop(backgroundMusic); 
+							AudioPlayer.player.stop(backgroundMusic); 
 							try
 							{
 								InputStream youLoseIn = new FileInputStream("GalaxyQuestMultimedia/youLoseMusic.au");
@@ -983,12 +988,13 @@ public class Controller extends JPanel
 						Laser petersLaser = new Laser(petersShip.getShipCoordinateX() + 20, //this is the width of the ship 
 								petersShip.getShipCoordinateY() + petersShip.getShipHeight(), laserSize, laserSize);
 						laserList.add(petersLaser);
+						/*
 						if(musicOn == true)
 						{
 							try
 							{
 								InputStream in = new FileInputStream("GalaxyQuestMultimedia/laserSound.au");
-								//laserFiredSound = new AudioStream(in);        
+								laserFiredSound = new AudioStream(in);        
 							}
 							catch (FileNotFoundException e1)
 							{
@@ -999,8 +1005,9 @@ public class Controller extends JPanel
 								System.out.println("IOException");
 							}
 							
-							//AudioPlayer.player.start(laserFiredSound);  
+							AudioPlayer.player.start(laserFiredSound);  
 						}
+						*/
 						lasersFired++;
 						rateOfLasersFired += 15;
 					}
@@ -1055,12 +1062,13 @@ public class Controller extends JPanel
 				if (startYet == true) lasersFired++;
 				rateOfLasersFired += 15;
 
+				/*
 				if(musicOn == true)
 				{
 					try
 					{
 						InputStream in = new FileInputStream("GalaxyQuestMultimedia/laserSound.au");
-						//laserFiredSound = new AudioStream(in);        
+						laserFiredSound = new AudioStream(in);        
 					}
 					catch (FileNotFoundException e)
 					{
@@ -1071,8 +1079,9 @@ public class Controller extends JPanel
 						System.out.println("IOException");
 					}
 					
-					//AudioPlayer.player.start(laserFiredSound);  
+					AudioPlayer.player.start(laserFiredSound);  
 				}
+				*/
 			}
 			else {System.out.println("not okay to fire lasers");}
 		}
