@@ -13,6 +13,10 @@ $ javac src/*.java -d bin/
 $ java -cp bin/ BasicDraw
 ```
 
+Note: you'll need to set your compiler preferences to show a warning for deprecated & restricted APIs instead of an error. If you use Eclipse, this is in:
+
+Preferences > Java > Compiler > Errors/Warnings > Deprecated and restricted API > Forbidden Reference (access rules)
+
 ## Game Play
 
 Once the game launches, your cursor becomes your spaceship. Click or hit <space> to fire lazers from your ship.
@@ -23,8 +27,6 @@ A shower of asteroids will start to approach your planet, which you need protect
 
 There are a few things that don't work the way the did in the ol' days:
 
-* Music! The music was the best part.
-* Audio: lazers and explosions! Who wouldn't want it!
 * The high score list is failing to read, likely because of a path change or permissions
 
 There are also some things I always wanted to do but didn't get around to:

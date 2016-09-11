@@ -8,7 +8,7 @@
  */
 
 import java.awt.Dimension;
-//import  sun.audio.*;
+import  sun.audio.*;
 import java.awt.Toolkit;
 import java.awt.*;
 import java.awt.Color;
@@ -72,7 +72,7 @@ public class Controller extends JPanel
 	Image asteroidImage;
 	Image blownUpAsteroidImage;
 	String lastNameEntered = null;
-	//AudioStream laserFiredSound = null, backgroundMusic = null, asteroidSound = null, youLoseMusic = null, warningSound = null;
+	AudioStream laserFiredSound = null, backgroundMusic = null, asteroidSound = null, youLoseMusic = null, warningSound = null;
 	
 	public Controller()
 	{
@@ -224,7 +224,6 @@ public class Controller extends JPanel
 			if(warningCounter >= 22) warningCounter = 0;
 			if(rateOfLasersFired >= 500 && warningCounter == 0)
 			{
-				/*
 				if(musicOn == true)
 				{
 					try
@@ -243,12 +242,10 @@ public class Controller extends JPanel
 					
 					AudioPlayer.player.start(warningSound);  
 				}
-				*/
 			}
 
 			if(asteroidsThatHitBase >= 4500 && warningCounter == 0)
 			{
-				/*
 				if(musicOn == true)
 				{
 					try
@@ -267,11 +264,9 @@ public class Controller extends JPanel
 					
 					AudioPlayer.player.start(warningSound);  
 				}
-				*/
 			}
 			warningCounter++;
 			
-			/*
 			if(musicCounter >= 480) musicCounter = 0; //restarts the music
 			
 			if (musicOn == true && musicCounter == 0)
@@ -296,7 +291,6 @@ public class Controller extends JPanel
 			
 			if(musicOn == false)  AudioPlayer.player.stop(backgroundMusic);
 			musicCounter++;
-			*/
 			
 			setCursor(cursor);
 			
@@ -501,7 +495,6 @@ public class Controller extends JPanel
 					repaint();
 					if (lives >= 0) 
 					{
-						/*
 						AudioPlayer.player.stop(backgroundMusic);
 						if(musicOn == true)
 						{
@@ -521,7 +514,6 @@ public class Controller extends JPanel
 							
 							AudioPlayer.player.start(asteroidSound);  
 						}
-						*/
 						JOptionPane.showMessageDialog(null, "Your base has been destroyed by asteroids");
 						musicCounter = 0;
 						petersShip.resetShip();
@@ -530,8 +522,7 @@ public class Controller extends JPanel
 						rateOfLasersFired = 0;
 					}
 					else 
-					{ 
-						/*
+					{
 						if(musicOn == true)
 						{
 							AudioPlayer.player.stop(backgroundMusic);  
@@ -550,7 +541,6 @@ public class Controller extends JPanel
 							}
 							AudioPlayer.player.start(youLoseMusic);  
 						}
-						*/
 						JOptionPane.showMessageDialog(null, "Game Over");
 						JOptionPane.showMessageDialog(null, "Accuracy: " + accuracyOnAsteroidHits + "%");
 						musicCounter = 0;
@@ -579,7 +569,6 @@ public class Controller extends JPanel
 					System.out.println("HIT!");
 					if (lives >= 0) 
 					{
-						/*
 						if(musicOn == true)
 						{
 							try
@@ -598,7 +587,6 @@ public class Controller extends JPanel
 							
 							AudioPlayer.player.start(asteroidSound);  
 						}
-						*/
 						JOptionPane.showMessageDialog(null, "Your ship has been destroyed by asteroids");
 						petersShip.resetShip();
 						asteroidList.clear();
@@ -607,7 +595,6 @@ public class Controller extends JPanel
 					}
 					else 
 					{
-						/*
 						if(musicOn == true)
 						{
 							AudioPlayer.player.stop(backgroundMusic); 
@@ -626,7 +613,6 @@ public class Controller extends JPanel
 							}
 							AudioPlayer.player.start(youLoseMusic);  
 						}
-						*/
 						JOptionPane.showMessageDialog(null, "Game Over");
 						JOptionPane.showMessageDialog(null, "Accuracy: " + accuracyOnAsteroidHits + "%");
 						musicCounter = 0;
@@ -677,7 +663,6 @@ public class Controller extends JPanel
 							((Asteroid)asteroidList.get(j)).isItHit() == false	) 
 						
 						{
-						/*
 						if (musicOn == true)
 						{
 							try
@@ -696,7 +681,6 @@ public class Controller extends JPanel
 							
 							AudioPlayer.player.start(asteroidSound);  
 						}
-						*/
 						((Asteroid)asteroidList.get(j)).blowUp();
 						laserList.remove(k);
 						points += (600 / someAsteroidWidth);
@@ -988,7 +972,6 @@ public class Controller extends JPanel
 						Laser petersLaser = new Laser(petersShip.getShipCoordinateX() + 20, //this is the width of the ship 
 								petersShip.getShipCoordinateY() + petersShip.getShipHeight(), laserSize, laserSize);
 						laserList.add(petersLaser);
-						/*
 						if(musicOn == true)
 						{
 							try
@@ -1007,7 +990,6 @@ public class Controller extends JPanel
 							
 							AudioPlayer.player.start(laserFiredSound);  
 						}
-						*/
 						lasersFired++;
 						rateOfLasersFired += 15;
 					}
@@ -1062,7 +1044,6 @@ public class Controller extends JPanel
 				if (startYet == true) lasersFired++;
 				rateOfLasersFired += 15;
 
-				/*
 				if(musicOn == true)
 				{
 					try
@@ -1081,7 +1062,6 @@ public class Controller extends JPanel
 					
 					AudioPlayer.player.start(laserFiredSound);  
 				}
-				*/
 			}
 			else {System.out.println("not okay to fire lasers");}
 		}
