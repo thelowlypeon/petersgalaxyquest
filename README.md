@@ -27,7 +27,7 @@ A shower of asteroids will start to approach your planet, which you need protect
 
 There are a few things that don't work the way the did in the ol' days:
 
-* The high score list is failing to read, likely because of a path change or permissions
+* Lazers are no longer shot from the middle of the ship, but instead come out of the right wing
 
 There are also some things I always wanted to do but didn't get around to:
 
